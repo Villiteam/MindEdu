@@ -7,8 +7,11 @@
     
     
 }
-.aim-content{
+.aim__content{
     padding: 0px 12px;
+    margin-left: 24px;
+    margin-right: 24px;
+
 }
 table {
     border: 1px solid #ccc;
@@ -21,9 +24,30 @@ th{
 }
 .aimSelect {
    
+    width: 100%;
     height: 38px;
+    display: block;
 }
 .aim__Select {
     width: 100%;
 
+}
+tr{
+    width: 100%;
+
+}
+tr,td,select {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+td{
+    border: 1px solid #ccc;
+
+}
+select {
+    
+}
+th{
+    width: calc(100%/4);
 }
