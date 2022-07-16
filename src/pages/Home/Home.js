@@ -2,9 +2,9 @@ import React from 'react'
 import './home.scss'
 
 
-import botImage from '../../assets/images/icons/bot.png'
-import examImage from '../../assets/images/icons/exam.png'
 import orientationImage from '../../assets/images/icons/orientation.png'
+import examImage from '../../assets/images/icons/exam.png'
+import conversationImage from '../../assets/images/icons/conversation.png'
 import { Link } from 'react-router-dom'
 const Home = () => {
 
@@ -21,8 +21,8 @@ const Home = () => {
             path: '/landing'
         },
         {
-            image: botImage,
-            title: 'Trợ lý ảo',
+            image: conversationImage,
+            title: 'Diễn đàn giao lưu học tập',
             path: '#'
         }
     ]

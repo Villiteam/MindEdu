@@ -3,10 +3,21 @@ import './subject.scss'
 import _ from 'lodash'
 import { getTimeFirebase } from '../../utils/getTimeFirebase'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addExam } from '../../redux/reducers/examReducer'
+
 
 const SubjectCard = ({ subject }) => {
-    console.log('subject', subject)
-    const navigate = useNavigate()
+
+    const naviagte = useNavigate()
+    const dispatch = useDispatch()
+    console.log(subject)
+
+    const handleStartDoExam = () => {
+        dispatch(addExam(subject))
+        naviagte(`/exam/${subject.id}`)
+    }
+
     return (
         subject && !_.isEmpty(subject) &&
         <div className='subject'>
@@ -21,7 +32,7 @@ const SubjectCard = ({ subject }) => {
                 </div>
             </div>
             <div className='subject__btn'>
-                <button>Làm bài thi</button>
+                <button onClick={handleStartDoExam}>Làm bài thi</button>
             </div>
         </div>
     )

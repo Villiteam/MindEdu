@@ -1,0 +1,96 @@
+@use '../../styles/' as *;
+
+.exam {
+    @include flexColumn(center, center);
+    padding-bottom: 30px;
+
+
+    &__btn {
+        margin-top: 40px;
+
+        button {
+            padding: 20px 30px;
+            color: $white;
+            background-color: $blue;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    }
+
+    &__timer {
+        margin: 20px
+    }
+
+    &__assignment {
+        @include flex(flex-start, center);
+        padding: 10px 40px;
+
+        &__choice {
+            width: 40%;
+            @include flex(center, space-between);
+            flex-wrap: wrap;
+
+
+            &__item {
+                width: 20%;
+                padding: 10px 15px;
+                border: 1px solid $third-text-color;
+                border-radius: 10px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                cursor: pointer;
+                background-color: $second-bg;
+
+                &.active {
+                    background-color: $blue;
+                    color: $white;
+                }
+
+                &:hover {
+                    background-color: $hover-bg;
+                }
+
+                a {
+                    color: $black;
+                    padding: 10px 15px;
+                }
+
+            }
+        }
+
+        &__questions {
+            width: 60%;
+
+
+
+            &__item {
+                &.active {
+                    background-color: $third-bg;
+                    width: 100%;
+                }
+
+                .question {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $text-exam;
+                    margin: 5px 0;
+                }
+
+                .answers {
+                    &__item {
+                        @include flex(center, flex-start);
+
+                        input {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -27,6 +27,7 @@ const Contest = () => {
                 })
             }
             setContest(data)
+
         }
         getContest()
     }, [id])

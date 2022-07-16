@@ -35,9 +35,14 @@
     }
 
     &__content {
-        margin: 40px 50px;
+        margin: 30px 50px;
+        min-height: 70vh;
+
 
         &__time {
+            @include flexColumn(center, center);
+            margin-bottom: 10px;
+
             h4 {
                 font-size: 18px;
                 color: $third-text-color;
