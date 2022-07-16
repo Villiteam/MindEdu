@@ -15,9 +15,9 @@ const Prove = () => {
         <div className='prove'>
             <div className='experience' style={{ backgroundImage: `url(${proveImage})` }}>
                 <div className='experience__wrap'>
-                    <h2>Trải nghiệm ngay Mindev</h2>
+                    <h2>Trải nghiệm ngay MindEdu</h2>
                     <div className='experience__description'>
-                        <p>Ứng dụng giáo dục Mindev dành cho nhà trường:</p>
+                        <p>Ứng dụng giáo dục MindEdu dành cho nhà trường:</p>
                         <p>LabHok đem đến giải pháp công nghệ giúp tối ưu thời gian, công sức của giáo viên trong việc giảng dạy, giao bài và theo dõi kết quả học tập của học sinh.</p>
                     </div>
                 </div>

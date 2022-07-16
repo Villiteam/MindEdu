@@ -11,15 +11,15 @@ const Objective = () => {
     const objectives = [
         {
             name: 'Giáo viên',
-            description: 'Mindev cung cấp cho giáo viên công cụ giúp giảm tải công việc, tăng hiệu quả giảng dạy và hiểu năng lực học sinh nhanh chóng.'
+            description: 'MindEdu cung cấp cho giáo viên công cụ giúp giảm tải công việc, tăng hiệu quả giảng dạy và hiểu năng lực học sinh nhanh chóng.'
         },
         {
             name: 'Học sinh',
-            description: 'Mindev cung cấp giao diện làm bài kiểm tra trực quan, thân thiện và dễ dàng sử dụng.'
+            description: 'MindEdu cung cấp giao diện làm bài kiểm tra trực quan, thân thiện và dễ dàng sử dụng.'
         },
         {
             name: 'Phụ huynh',
-            description: 'Mindev giúp phụ huynh dễ dàng nắm bắt tình hình học tập của các con.'
+            description: 'MindEdu giúp phụ huynh dễ dàng nắm bắt tình hình học tập của các con.'
         }
     ]
 
@@ -52,7 +52,7 @@ const Objective = () => {
                     }
                 </div>
                 <div className='objective__content'>
-                    <h2 className='objective__content__title'>Đối tượng mà Mindev hướng tới</h2>
+                    <h2 className='objective__content__title'>Đối tượng mà MindEdu hướng tới</h2>
                     <div className='objective__content__description'>
                         {
                             objectives.map((item, index) => (

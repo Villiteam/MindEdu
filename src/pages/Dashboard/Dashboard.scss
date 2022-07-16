@@ -1,0 +1,101 @@
+@use '../../styles/' as *;
+
+.dashboard {
+
+    &__background {
+        background: linear-gradient(360deg, #3899DE 0%, #3C9FE1 0.01%, #4CB8EE 100%, #4FBDF0 100%);
+        width: 100%;
+        padding-bottom: 100px;
+        @include flexColumn(center, center);
+        margin: auto;
+        position: relative;
+        -webkit-mask:
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at top, white 79.5%, transparent 80%) top left,
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at bottom, transparent 79.5%, white 80%) top center,
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at top, white 79.5%, transparent 80%) top right;
+        mask:
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at top, white 79.5%, transparent 80%) top left,
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at bottom, transparent 79.5%, white 80%) top center,
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at top, white 79.5%, transparent 80%) top right;
+        -webkit-mask-size: 33.4% 140%;
+        -webkit-mask-repeat: no-repeat;
+        mask-size: 33.4% 140%;
+        mask-repeat: no-repeat;
+
+    }
+
+    &__content {
+        padding: 30px 0;
+
+
+        h2 {
+            font-size: 28px;
+            color: $white;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            max-width: 500px;
+            font-size: 20px;
+            color: $white;
+            font-weight: 500;
+            text-align: justify;
+        }
+    }
+
+    &__contests {
+        margin: 20px 80px;
+        margin-bottom: 100px;
+        background-color: $white;
+
+        @include tablet {
+            margin: 20px 30px;
+        }
+
+        @include mobile {
+            margin: 20px 10px;
+        }
+
+        &__item {
+
+            &__menu {
+                @include flex(center, space-between);
+                flex-wrap: wrap;
+            }
+
+            .contest__empty {
+                width: 40%;
+                border-radius: 10px;
+                height: 100px;
+                background-color: $primary-text-color;
+                position: relative;
+                margin: 10px 0;
+
+                @include tablet {
+                    width: 45%;
+                }
+
+                @include mobile {
+                    width: 100%;
+                }
+
+                span {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: $white;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 28px;
+            font-weight: 600;
+            color: $third-text-color;
+            max-width: 10px 0;
+        }
+    }
+}

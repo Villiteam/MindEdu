@@ -37,7 +37,7 @@ const Header = () => {
         </div>
         <div className='header__left__logo'>
           <a href='/'>
-            <span>Mindev</span>
+            <span>MindEdu</span>
           </a>
         </div>
       </div>

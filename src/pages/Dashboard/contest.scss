@@ -1,0 +1,59 @@
+@use '../../styles/' as *;
+
+
+a {
+
+    width: 40%;
+
+    @include mobile {
+        width: 100%;
+    }
+
+    .contest {
+        border: 1px solid $third-text-color;
+        width: 100%;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+
+        &__name {
+            font-size: 26px;
+            font-weight: 600;
+            color: $second-text-color;
+        }
+
+        &__time {
+
+            margin: 10px 0;
+
+            h4 {
+                font-size: 18px;
+                color: $black;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 14px;
+                color: $third-text-color;
+                font-weight: 500;
+            }
+        }
+
+        &__subject,
+        &__fee {
+            h4 {
+                font-size: 18px;
+                color: $black;
+                font-weight: 500;
+
+                span {
+                    font-size: 14px;
+                    color: $third-text-color;
+                    font-weight: 500;
+                }
+            }
+        }
+
+
+    }
+}

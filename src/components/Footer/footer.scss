@@ -9,6 +9,7 @@
 
     &__top {
         @include flex(flex-start, space-between);
+        background-color: $white;
 
         @include mobile {
             flex-direction: column;
