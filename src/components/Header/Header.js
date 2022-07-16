@@ -46,7 +46,7 @@ const Header = () => {
           {
             menuHeader.map((item, index) => (
               <li key={index}>
-                <a href={item.path}>{item.title}</a>
+                <Link to={item.path}>{item.title}</Link>
               </li>
             ))
           }

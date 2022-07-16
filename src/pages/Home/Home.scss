@@ -1,0 +1,62 @@
+@use '../../styles/' as *;
+
+.home {
+    height: 100vh;
+    overflow: hidden;
+    background-color: $hover-bg;
+    @include flexColumn(center, center);
+
+    padding: 0 50px;
+
+    &__logo {
+        h2 {
+            font-size: 28px;
+            color: $second-text-color;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__menu {
+        @include flex(center, center);
+        width: 100%;
+
+        &__item {
+            @include flexColumn(center, center);
+            width: 30%;
+            text-decoration: none;
+            border: 1px solid $black;
+            margin-right: 10px;
+            padding: 50px 20px;
+            border-radius: 8px;
+            background-color: $blue;
+            cursor: pointer;
+
+            &:hover {
+                transform: translateY(-20px);
+                transition: transform .3s ease;
+            }
+
+            &:hover img {
+                transform: scale(1.2);
+                transition: transform .3s ease;
+                margin-bottom: 10px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+
+            p {
+                color: $white;
+                font-weight: 600;
+                font-size: 18px;
+            }
+        }
+    }
+}
