@@ -8,7 +8,7 @@ export const getTimeFirebase = (seconds, nanoseconds) => {
     var minutes = timeFirebase.getMinutes();
     var hour = timeFirebase.getHours();
 
-    const time = `${day}/${month}/${year}  ${hour}:${minutes < 10 ? `0${minutes}` : minutes}`
+    const timeFormat = `${day}/${month}/${year}  ${hour}:${minutes < 10 ? `0${minutes}` : minutes}`
 
-    return ({ time, timeFirebase: timeFirebase.getTime() });
+    return ({ timeFormat, timeFirebase: timeFirebase.getTime() });
 }

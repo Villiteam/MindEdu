@@ -5,7 +5,7 @@ import { db } from '../../utils/Firebase'
 import { getTimeFirebase } from '../../utils/getTimeFirebase';
 
 import backgroundImage from '../../assets/images/dashboard/background-dashboard.jpg'
-import Contest from './Contest';
+import ContestCard from './ContestCard';
 import Footer from '../../components/Footer/Footer'
 
 const Dashboard = () => {
@@ -67,7 +67,7 @@ const Dashboard = () => {
                         upcoming && upcoming.length > 0 ?
                             upcoming.map((item, index) => (
                                 <div key={index} className="dashboard__contests__item__menu">
-                                    <Contest contest={item} />
+                                    <ContestCard contest={item} />
                                 </div>
                             ))
                             :
@@ -82,7 +82,7 @@ const Dashboard = () => {
                         happening && happening.length > 0 ?
                             happening.map((item, index) => (
                                 <div key={index} className="dashboard__contests__item__menu">
-                                    <Contest contest={item} />
+                                    <ContestCard contest={item} />
                                 </div>
                             ))
                             :
@@ -97,7 +97,7 @@ const Dashboard = () => {
                         happened && happened.length > 0 ?
                             happened.map((item, index) => (
                                 <div key={index} className="dashboard__contests__item__menu">
-                                    <Contest contest={item} />
+                                    <ContestCard contest={item} />
                                 </div>
                             ))
                             :
