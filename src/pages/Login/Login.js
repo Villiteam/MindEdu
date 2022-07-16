@@ -11,7 +11,7 @@ const Login = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useEffect(() =>  {
     if (loading) {
       // maybe trigger a loading screen
       return;
