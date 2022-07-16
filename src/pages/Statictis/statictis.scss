@@ -1,0 +1,168 @@
+@use '../../styles/' as *;
+
+.statictis {
+
+    &__title {
+        padding-bottom: 100px;
+        background: linear-gradient(360deg, #3899DE 0%, #3C9FE1 0.01%, #4CB8EE 100%, #4FBDF0 100%);
+        -webkit-mask:
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at top, white 79.5%, transparent 80%) top left,
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at bottom, transparent 79.5%, white 80%) top center,
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at top, white 79.5%, transparent 80%) top right;
+        mask:
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at top, white 79.5%, transparent 80%) top left,
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at bottom, transparent 79.5%, white 80%) top center,
+            radial-gradient(var(--r1, 160%) var(--r2, 68.15%) at top, white 79.5%, transparent 80%) top right;
+        -webkit-mask-size: 33.4% 140%;
+        -webkit-mask-repeat: no-repeat;
+        mask-size: 33.4% 140%;
+        mask-repeat: no-repeat;
+
+        p {
+            text-align: center;
+            padding-top: 30px;
+            font-weight: 600;
+            color: $white;
+            font-size: 18px;
+        }
+    }
+
+    &__results {
+        @include flex(center, center);
+        margin-top: 30px;
+
+        &__left {
+            width: 50%;
+            text-align: center;
+            border-right: 1px solid $black;
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                color: $third-text-color;
+                margin-bottom: 10px;
+            }
+
+            p {
+                padding: 0 60px;
+                font-size: 16px;
+                font-weight: 600;
+                color: $third-text-color;
+                margin-bottom: 10px;
+            }
+        }
+
+        &__right {
+            width: 50%;
+            text-align: center;
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                color: $third-text-color;
+                margin-bottom: 10px;
+            }
+
+            p {
+                padding: 0 60px;
+                font-size: 16px;
+                font-weight: 600;
+                color: $third-text-color;
+                margin-bottom: 10px;
+            }
+        }
+
+
+    }
+
+    &__results-detail {
+        @include flexColumn(center, center);
+        margin-bottom: 20px;
+
+        h2 {
+            font-size: 22px;
+            color: $third-text-color;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        &_menu {
+            @include flex(center, center);
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        &__item {
+            width: 50%;
+            padding-left: 20px;
+
+            .question {}
+
+            .answers {
+
+                &__true {
+                    font-size: 16px;
+                    margin: 5px 0;
+
+                    &.true {
+                        color: $blue;
+                    }
+
+                    &.false {
+                        color: rgb(238, 74, 74);
+                    }
+                }
+
+                &__item {
+
+                    @include flex(center, flex-start);
+
+                    input {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__score {
+        @include flexColumn(center, center);
+        margin-top: 20px;
+
+        p {
+            font-size: 16px;
+            color: $third-text-color;
+            font-weight: 600;
+
+        }
+
+        span {
+            padding: 20px 15px;
+            border: 5px solid $blue;
+            border-radius: 50%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__btn {
+        @include flex(center, center);
+
+        a {
+            text-align: center;
+
+            button {
+                padding: 20px 30px;
+                color: $white;
+                background-color: $blue;
+                border: none;
+                outline: none;
+                border-radius: 4px;
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+}

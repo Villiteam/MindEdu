@@ -50,14 +50,22 @@ const Contest = () => {
                     <h4>Thời gian làm bài thi:</h4>
                     <p>{getTimeFirebase(contest.Start.seconds, contest.Start.nanoseconds).timeFormat} - {getTimeFirebase(contest.End.seconds, contest.End.nanoseconds).timeFormat}</p>
                 </div>
+                <div className='contest__btn'>
+                    <button>Đăng ký</button>
+                </div>
                 <div className='contest__content__subject'>
-                    {
-                        exams && exams.map((item, index) => (
-                            <div key={index} className="contest__content__subject__item">
-                                <SubjectCard subject={item} />
-                            </div>
-                        ))
-                    }
+                    <h3 className='contest__content__subject__title'>
+                        Các môn thi bao gồm:
+                    </h3>
+                    <div className='contest__content__subject__menu'>
+                        {
+                            exams && exams.map((item, index) => (
+                                <div key={index} className="contest__content__subject__item">
+                                    <SubjectCard subject={item} />
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
             <Footer />

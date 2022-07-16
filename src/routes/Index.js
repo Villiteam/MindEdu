@@ -11,6 +11,7 @@ import Dashboard from '../pages/Dashboard/Dashboard'
 import Contest from '../pages/Contest/Contest';
 import Home from '../pages/Home/Home';
 import Exam from '../pages/Exam/Exam';
+import Statictis from '../pages/Statictis/Statictis';
 
 const Router = () => {
     return (
@@ -23,6 +24,7 @@ const Router = () => {
                 <Route path='/dashboard' element={<Dashboard />} />
                 <Route path='/contest/:id' element={<Contest />} />
                 <Route path='/exam/:id' element={<Exam />} />
+                <Route path='/statictis/:id' element={<Statictis />} />
             </Route>
         </Routes>
     )

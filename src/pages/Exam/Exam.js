@@ -1,15 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import './exam.scss'
 import { useSelector } from 'react-redux'
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import { useDispatch } from 'react-redux'
+import { addExam, addScore } from '../../redux/reducers/examReducer'
+import { useNavigate } from 'react-router-dom'
 
 const Exam = () => {
 
     const examRedux = useSelector(state => state.exam.exam)
     const [questionActive, setQuestionActive] = useState(null)
-    const [exam, setExam] = useState(examRedux)
+    const [exams, setExams] = useState(examRedux)
     const [isDoing, setIsDoing] = useState(false)
-    const [answerSelected, setAnswerSelected] = useState([])
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleStartExam = () => {
         setIsDoing(true)
@@ -20,15 +24,25 @@ const Exam = () => {
     }
 
     const handleSelectAnswer = (index, indexQuestion) => {
-        const examCopy = { ...exam }
+        const examCopy = { ...exams }
         let questionSelect = examCopy.Data.Question[indexQuestion]
         questionSelect = { ...questionSelect, answerSelected: index }
         examCopy.Data.Question[indexQuestion] = questionSelect
-        setExam(examCopy)
+        setExams(examCopy)
     }
 
     const handleFinshedExam = () => {
 
+        let score = 0
+        exams.Data.Question.forEach((el) => {
+            if (el.answerSelected === el.answerTrue) {
+                score += 0.5
+            }
+        })
+
+        dispatch(addScore(score))
+        dispatch(addExam(exams))
+        navigate(`/statictis/${exams.id}`)
     }
 
     return (
@@ -39,7 +53,7 @@ const Exam = () => {
             <div className='exam__timer'>
                 <CountdownCircleTimer
                     isPlaying={isDoing}
-                    duration={exam.Duration * 60}
+                    duration={exams.Duration * 60}
                     colors={['#004777', '#F7B801', '#A30000', '#A30000']}
                     colorsTime={[7, 5, 2, 0]}
                     size={120}
@@ -58,8 +72,8 @@ const Exam = () => {
                     <div className='exam__assignment'>
                         <div className='exam__assignment__choice'>
                             {
-                                exam && exam.Data.Question.map((item, index) => (
-                                    <div className={`exam__assignment__choice__item ${item.answerSelected ? 'active' : ''}`}
+                                exams && exams.Data.Question.map((item, index) => (
+                                    <div className={`exam__assignment__choice__item ${item.answerSelected || item.answerSelected === 0 ? 'active' : ''}`}
                                         key={index}
                                     >
                                         <a href={`#${index}`} onClick={() => handleSelectQuestion(index)}> {index + 1}</a>
@@ -69,7 +83,7 @@ const Exam = () => {
                         </div>
                         <div className='exam__assignment__questions'>
                             {
-                                exam && exam.Data.Question.map((item, indexQuestion) => (
+                                exams && exams.Data.Question.map((item, indexQuestion) => (
                                     <div
                                         id={indexQuestion}
                                         className={`exam__assignment__questions__item ${questionActive && questionActive === indexQuestion ? 'active' : ''}`}
@@ -80,11 +94,17 @@ const Exam = () => {
                                             {
                                                 item.answer.map((answer, index) => (
                                                     <div className='answers__item' key={index}>
-                                                        <input name={`${indexQuestion}`} type="radio" onChange={() => handleSelectAnswer(index, indexQuestion)} />
+                                                        <input
+                                                            name={`${indexQuestion}`}
+                                                            type="radio"
+                                                            onChange={() => handleSelectAnswer(index, indexQuestion)}
+                                                            checked={exams.answerSelected ? exams.answerSelected === index : undefined}
+                                                        />
                                                         <p>{`${answer.order}. ${answer.name}`}</p>
                                                     </div>
                                                 ))
                                             }
+
                                         </div>
                                     </div>
                                 ))
