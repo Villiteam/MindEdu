@@ -6,9 +6,10 @@ import orientationImage from '../../assets/images/icons/orientation.png'
 import examImage from '../../assets/images/icons/exam.png'
 import conversationImage from '../../assets/images/icons/conversation.png'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 const Home = () => {
 
-
+    console.log(useSelector(state => state.user.user))
     const homeData = [
         {
             image: orientationImage,

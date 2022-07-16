@@ -1,0 +1,35 @@
+@use '../../styles/' as *;
+
+.login-form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 60px 40px 28px;
+
+    form {
+        min-width: 500px;
+        padding: 20px;
+        border: 1px solid $black;
+        border-radius: 4px;
+
+        .btn-login,
+        .btn-register {
+            @include flex(center, center);
+            padding: 10px 20px;
+            color: $white;
+            background-color: $blue;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+    }
+}

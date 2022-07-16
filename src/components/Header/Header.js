@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './header.scss'
+import { signOut } from "firebase/auth";
+import { auth } from '../../utils/Firebase';
+import { useSelector, useDispatch } from 'react-redux'
+import { removeUser } from '../../redux/reducers/userReducer';
 
 import menuIcon from '../../assets/images/icons/menu-mobile.svg'
+import userIcon from '../../assets/images/icons/programmer.png'
 
 const Header = () => {
   const menuHeader = [
@@ -28,7 +33,15 @@ const Header = () => {
     }
   ]
 
+  const user = useSelector(state => state.user.user)
+  const navigate = useNavigate()
   const [activeMenuMobile, setActiveMenuMobile] = useState(false)
+  const dispatch = useDispatch()
+  const handleLogout = async () => {
+    dispatch(removeUser())
+    await signOut(auth)
+    navigate('/login')
+  }
   return (
     <header className='header'>
       <div className='header__left'>
@@ -51,14 +64,22 @@ const Header = () => {
             ))
           }
         </ul>
-        <div className='header__right__button'>
-          <Link to="/login">
-            <button className='btn btn-sign-in'>Đăng nhập</button>
-          </Link>
-          <Link to='/signup'>
-            <button className='btn btn-sign-up'>Đăng kí</button>
-          </Link>
-        </div>
+        {
+          user ?
+            <div className='header__right__user'>
+              <img src={userIcon} />
+              <button className='btn btn-log-out' onClick={handleLogout}>Đăng xuất</button>
+            </div>
+            :
+            <div className='header__right__button'>
+              <Link to="/login">
+                <button className='btn btn-sign-in'>Đăng nhập</button>
+              </Link>
+              <Link to='/signup'>
+                <button className='btn btn-sign-up'>Đăng kí</button>
+              </Link>
+            </div>
+        }
       </div>
     </header>
   )

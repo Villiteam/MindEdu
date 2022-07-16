@@ -5,17 +5,25 @@ import { getTimeFirebase } from '../../utils/getTimeFirebase'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addExam } from '../../redux/reducers/examReducer'
-
+import { useSelector } from 'react-redux'
 
 const SubjectCard = ({ subject }) => {
 
     const naviagte = useNavigate()
     const dispatch = useDispatch()
-    console.log(subject)
+    const user = useSelector(state => state.user.user)
 
     const handleStartDoExam = () => {
-        dispatch(addExam(subject))
-        naviagte(`/exam/${subject.id}`)
+        if (!user) {
+            console.log(user)
+            alert("Vui lòng đăng nhập!")
+            naviagte('/login')
+            return
+        } else {
+            dispatch(addExam(subject))
+            naviagte(`/exam/${subject.id}`)
+
+        }
     }
 
     return (

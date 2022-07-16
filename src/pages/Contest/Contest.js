@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import './contest.scss'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../utils/Firebase';
 import _ from 'lodash'
 import { getTimeFirebase } from '../../utils/getTimeFirebase';
 import SubjectCard from './SubjectCard';
 import Footer from '../../components/Footer/Footer';
+import { useSelector } from 'react-redux'
 
 const Contest = () => {
 
     const { id } = useParams()
     const [contest, setContest] = useState({})
     const [exams, setExams] = useState([])
+    const user = useSelector(state => state.user.user)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const getContest = async () => {
@@ -31,6 +34,13 @@ const Contest = () => {
         }
         getContest()
     }, [id])
+
+    const handleRegisterExam = () => {
+        if (!user) {
+            alert('Vui lòng đăng nhập!')
+            navigate('/login')
+        }
+    }
 
     // console.log(exams)
 
@@ -51,7 +61,7 @@ const Contest = () => {
                     <p>{getTimeFirebase(contest.Start.seconds, contest.Start.nanoseconds).timeFormat} - {getTimeFirebase(contest.End.seconds, contest.End.nanoseconds).timeFormat}</p>
                 </div>
                 <div className='contest__btn'>
-                    <button>Đăng ký</button>
+                    <button onClick={handleRegisterExam}>Đăng ký</button>
                 </div>
                 <div className='contest__content__subject'>
                     <h3 className='contest__content__subject__title'>
