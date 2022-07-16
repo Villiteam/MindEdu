@@ -48,7 +48,7 @@ const Register = () => {
             </div>
 
             <button
-              onClick={signInWithGoogle}
+              onClick={registerWithEmailAndPassword}
               className="btn-lg btn-primary mt-24 hover"
             >
               Đăng kí

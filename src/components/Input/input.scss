@@ -1,2 +1,28 @@
 @use '../../styles/' as *;
 
+.input {
+    @include flex(center, center);
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    label {
+        width: 100%;
+        margin-bottom: 4px;
+        font-size: 14px;
+        color: $third-text-color;
+
+        span {
+            margin-left: 5px;
+            color: #FF0000;
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: 6px 12px;
+        border-radius: 4px;
+        outline: none;
+        height: 45px;
+        border: 1px solid $black;
+    }
+}
