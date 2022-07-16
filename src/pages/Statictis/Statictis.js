@@ -13,7 +13,7 @@ const Statictis = () => {
     const [answerTrues, setAnswerTrues] = useState([])
     const [answerFalses, setAnswerFalses] = useState([])
     const { id } = useParams()
-    console.log(exams)
+
 
     useEffect(() => {
         let arrTrue = []
@@ -30,6 +30,7 @@ const Statictis = () => {
         });
         setAnswerTrues(arrTrue)
         setAnswerFalses(arrFalse)
+        window.scrollTo(0, 0)
     }, [id])
 
     return (
@@ -85,6 +86,9 @@ const Statictis = () => {
                                 </div>
                                 <p className={`answers__true ${item.answerSelected === item.answerTrue ? 'true' : 'false'}`}>
                                     {`Đáp án: ${item.answer[item.answerTrue].order}`}
+                                </p>
+                                <p className='solution'>
+                                    {item.solution}
                                 </p>
                             </div>
                         ))
