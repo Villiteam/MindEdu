@@ -1,0 +1,147 @@
+@use '../../../styles/' as *;
+
+.hero-slide {
+    // margin-top: $header-height;
+    position: relative;
+    height: 85vh;
+
+    @include tablet {
+        height: 70vh;
+    }
+
+    @include mobile {
+        height: 50vh;
+    }
+
+    &__menu {
+        position: relative;
+        width: 100%;
+
+        &__item {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+                display: block;
+                transition: all .3s ease-in;
+                pointer-events: visible;
+
+                .caption {
+                    transform: translateY(0);
+                    transition: transform .5s ease;
+                }
+
+                .explore {
+                    transform: translateY(0);
+                    transition: transform .5s ease;
+                }
+            }
+
+            &>.img {
+                position: relative;
+                width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 85vh;
+
+                @include tablet {
+                    height: 70vh;
+                }
+
+                @include mobile {
+                    height: 50vh;
+                }
+            }
+
+            &__content {
+                position: absolute;
+                left: 10%;
+                top: 0%;
+                bottom: 0%;
+                right: 50%;
+                padding: 60px 120px;
+                background: radial-gradient(rgba(255, 255, 255, 0.8) 50%, transparent 70%);
+                @include flex(baseline, center);
+                flex-direction: column;
+
+                @include tablet {
+                    padding: 60px;
+                }
+
+                @include mobile {
+                    padding: 0;
+                }
+
+                &>.caption {
+                    font-size: 32px;
+                    line-height: 40px;
+                    margin: 20px 0;
+                    color: $primary-text-color;
+                    transform: translateX(-100px);
+
+                    @include tablet {
+                        font-size: 28px;
+                    }
+
+                    @include mobile {
+                        font-size: 24px;
+                    }
+                }
+
+                &>.explore {
+                    width: 100%;
+                    padding: 20px 40px;
+                    margin: 40px 0 20px;
+                    background: linear-gradient(270deg, #885EFE 0%, #6038CF 100%);
+                    box-shadow: 0px 5px 8px rgb(98 70 176 / 10%);
+                    border-radius: 4px;
+                    color: #FFF;
+                    font-size: 18px;
+                    line-height: 21px;
+                    transform: translateX(100px);
+                    text-align: center;
+
+                    @include tablet {
+                        padding: 15px 20px;
+                        font-size: 16px;
+                    }
+
+                    @include mobile {
+                        padding: 10px;
+                        margin: 5px 0 20px;
+                        font-size: 14px;
+                    }
+                }
+
+                // transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+.control-slide {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include flex(center, center);
+
+    & .dot {
+        width: 10px;
+        height: 10px;
+        background-color: $second-bg;
+        margin-right: 20px;
+        cursor: pointer;
+
+        &.active {
+            background-color: $primary-text-color;
+        }
+    }
+}

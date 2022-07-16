@@ -1,0 +1,70 @@
+@use '../../../styles/' as *;
+
+.form-register {
+
+    form {
+        @include flexColumn(center, center);
+
+    }
+
+    &__title {
+        font-size: 20px;
+        color: $third-text-color;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+
+
+    .note {
+        font-size: 14px;
+        color: $primary-text-color;
+        font-style: italic;
+        font-weight: 500;
+
+        span {
+            margin-right: 4px;
+            color: #FF0000;
+        }
+    }
+
+    .content-require {
+        @include flexColumn(center, center);
+        margin-bottom: 5px;
+
+        label {
+            width: 100%;
+            margin-bottom: 2px;
+            font-size: 14px;
+            color: $third-text-color;
+
+            span {
+                margin-left: 0px;
+                color: #FF0000;
+            }
+        }
+
+        textarea {
+            height: 80px;
+            resize: none;
+            width: 100%;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+        }
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 15px 20px;
+        background: linear-gradient(270deg, #885EFE 0%, #6038CF 100%);
+        border-radius: 4px;
+        color: #FFF;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        outline: none;
+        border: none;
+        margin-top: 10px;
+    }
+}

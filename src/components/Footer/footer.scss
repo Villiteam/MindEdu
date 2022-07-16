@@ -1,0 +1,116 @@
+@use '../../styles/' as *;
+
+.footer {
+    margin: 0 90px;
+
+    @include mobile {
+        margin: 0 40px;
+    }
+
+    &__top {
+        @include flex(flex-start, space-between);
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__logo {
+            margin-right: 20px;
+
+            span {
+                font-weight: 700;
+                font-size: 32px;
+                color: $second-text-color;
+            }
+        }
+
+        &__contact {
+            width: 60%;
+
+            @include mobile {
+                width: 100%;
+            }
+
+            &__item {
+                @include flex(center, flex-start);
+                margin-bottom: 14px;
+
+                &>h4 {
+                    font-size: 14px;
+                    font-weight: 500;
+                    min-width: 70px;
+                    margin-right: 10px;
+                }
+
+                &>p {
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        &__social {
+            @include flex(center, center);
+            flex-direction: column;
+
+            &>p {
+                font-size: 14px;
+                font-weight: 400;
+                color: unset;
+            }
+
+            &__icons {
+                @include flex(center, center);
+                margin-top: 10px;
+
+                &>a {
+                    margin-right: 20px;
+                    width: 40px;
+                    height: 40px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__down {
+        @include flex(center, space-between);
+        height: 60px;
+        background-color: #F9F9FF;
+
+        &__copyright {
+            span {
+                font-size: 13px;
+                color: $black;
+            }
+        }
+
+        &__about-us {
+            @include flex(center, center);
+
+            &>a {
+                font-size: 14px;
+                color: $primary-text-color;
+                font-weight: 600;
+                padding: 0 15px;
+                width: fit-content;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &:last-child {
+                    border-left: 1px solid $third-text-color;
+                }
+            }
+        }
+    }
+}

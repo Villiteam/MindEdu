@@ -1,21 +1,21 @@
 import "./Home.scss";
 
+import Header from '../../components/Header/Header';
+import HeroSlide from '../Home/HeroSlide/HeroSlide'
+import Objective from '../Home/Objective/Objective'
+import Product from '../Home/Product/Product'
+import Prove from '../Home/Prove/Prove'
+import Footer from '../../components/Footer/Footer'
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="home">
+      <Header />
+      <HeroSlide />
+      <Objective />
+      <Product />
+      <Prove />
+      <Footer />
     </div>
   );
 }

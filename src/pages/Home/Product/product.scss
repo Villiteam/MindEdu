@@ -1,0 +1,133 @@
+@use '../../../styles/' as *;
+
+.product {
+    padding: 80px 0;
+    margin: 0 90px;
+    @include flex(center, center);
+    flex-direction: column;
+
+    @include mobile {
+        margin: 0;
+        padding: 30px 10px;
+    }
+
+    &__title {
+        @include flex(center, center);
+        flex-direction: column;
+        width: 40%;
+        margin: auto;
+        margin-bottom: 40px;
+
+        @include tablet {
+            width: 80%;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+
+        &>h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: $third-text-color;
+            margin-bottom: 20px;
+        }
+
+        &>p {
+            font-size: 14px;
+            line-height: 22px;
+            color: $primary-text-color;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+
+    &__tabs {
+        height: 80px;
+    }
+
+    &__menu {
+
+        &__item {
+            @include flex(center, space-between);
+            margin-bottom: 180px;
+
+            @include mobile {
+                flex-direction: column;
+            }
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+
+                @include mobile {
+                    flex-direction: column;
+                }
+
+            }
+
+            &__img {
+                width: 57.5%;
+
+                @include tablet {
+                    width: 45%;
+                    margin-right: 20px;
+                }
+
+                @include mobile {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    margin-right: 0;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            &__content {
+                width: 30%;
+
+                @include tablet {
+                    width: 55%;
+                    margin-right: 20px;
+                }
+
+                @include mobile {
+                    width: 100%;
+                    margin-right: 0;
+                }
+
+                &>h3 {
+                    font-size: 24px;
+                    line-height: 40px;
+                    color: $third-text-color;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                }
+
+                &>p {
+                    font-size: 16px;
+                    line-height: 30px;
+                    font-weight: 500;
+                    color: $third-text-color;
+                }
+            }
+        }
+    }
+
+    &__register {
+        padding: 20px 100px;
+        background: linear-gradient(270deg, #885EFE 0%, #6038CF 100%);
+        box-shadow: 0px 5px 8px rgb(98 70 176 / 10%);
+        border-radius: 4px;
+        color: #FFF;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+
+        @include mobile {
+            padding: 20px;
+            width: 100%;
+        }
+    }
+}

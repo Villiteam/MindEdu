@@ -1,0 +1,63 @@
+@use '../../styles/' as *;
+
+.dropdown {
+    @include flexColumn(center, center);
+    margin-bottom: 10px;
+    position: relative;
+    margin-left: 10px;
+
+    p {
+        width: 100%;
+        margin-bottom: 4px;
+        font-size: 14px;
+
+        color: $third-text-color;
+
+        span {
+            margin-left: 5px;
+            color: #FF0000;
+        }
+    }
+
+    &-toggle {
+        width: 100%;
+        padding: 12px;
+        border-radius: 4px;
+        outline: none;
+        height: 45px;
+        border: 1px solid $black;
+        cursor: pointer;
+    }
+
+    &-menu {
+        position: absolute;
+        top: 110%;
+        left: 0;
+        width: 100%;
+        border: 1px solid $black;
+        border-radius: 2px;
+        z-index: 99;
+        background-color: $second-bg;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: visible;
+            transition: all .1s ease-in;
+        }
+
+
+        &__item {
+            padding: 6px;
+
+            &:hover {
+                background-color: $hover-bg;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
