@@ -40,6 +40,7 @@ const Contest = () => {
             alert('Vui lòng đăng nhập!')
             navigate('/login')
         }
+        navigate('/aim')
     }
 
     // console.log(exams)

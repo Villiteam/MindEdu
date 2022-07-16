@@ -1,0 +1,118 @@
+@use '../../styles/' as *;
+
+.aim__table {
+    width: 100%;
+    border: 4px solid #ccc;
+
+
+}
+
+.aim__content {
+    padding: 0px 12px;
+    margin-left: 24px;
+    margin-right: 24px;
+
+}
+
+table {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+th {
+    border: 1px solid #ccc;
+    width: 120px;
+    height: 38px;
+}
+
+.aimSelect {
+
+    width: 100%;
+    height: 38px;
+    display: block;
+}
+
+.aim__Select {
+    width: 100%;
+
+}
+
+tr {
+    width: 100%;
+
+}
+
+tr,
+td,
+select {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+td {
+    border: 1px solid #ccc;
+
+}
+
+select {}
+
+th {
+    width: calc(100%/4);
+}
+
+.btn-lg {
+    font-weight: 600;
+    padding: 8px 16px;
+    height: 44px;
+    width: 100%;
+    color: #fff;
+    background-color: $primary;
+}
+
+.customBtn {
+    display: inline-block;
+    color: #444;
+    border-radius: 5px;
+    border: thin solid #888;
+    box-shadow: 1px 1px 1px grey;
+    white-space: nowrap;
+    background-color: #fff !important;
+}
+
+.btn-add {
+    width: 180px;
+    height: 40px;
+    color: #fff;
+    background-color: $blue;
+    color: $white;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+input {
+    @include flex(center, center);
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    label {
+        width: 100%;
+        margin-bottom: 4px;
+        font-size: 14px;
+        color: $third-text-color;
+
+        span {
+            margin-left: 5px;
+            color: #ff0000;
+        }
+    }
+}
+
+.btn-delete-aim {
+    background-color: $blue;
+    color: $white;
+    padding: 10px;
+    font-weight: 600;
+}

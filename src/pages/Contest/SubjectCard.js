@@ -12,6 +12,7 @@ const SubjectCard = ({ subject }) => {
     const naviagte = useNavigate()
     const dispatch = useDispatch()
     const user = useSelector(state => state.user.user)
+    const aim = useSelector(state => state.user.aim)
 
     const handleStartDoExam = () => {
         if (!user) {
@@ -19,11 +20,16 @@ const SubjectCard = ({ subject }) => {
             alert("Vui lòng đăng nhập!")
             naviagte('/login')
             return
-        } else {
-            dispatch(addExam(subject))
-            naviagte(`/exam/${subject.id}`)
-
         }
+
+        if (!aim) {
+            naviagte('/aim')
+            return
+        }
+        dispatch(addExam(subject))
+
+        naviagte(`/exam/${subject.id}`)
+
     }
 
     return (
