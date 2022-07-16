@@ -1,43 +1,111 @@
-@import './minxin';
-@import './variable';
+@import "./minxin";
+@import "./variable";
 
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap");
 
 html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    text-rendering: optimizeSpeed;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .col-12 {
-    width: 100%;
+  width: 100%;
 }
 
 .col-6 {
-    width: 50%;
+  width: 50%;
+}
+.mt-36 {
+  margin-top: 36px !important;
+}
+.mt-24 {
+  margin-top: 24px !important;
+}
+.mt-12 {
+  margin-top: 12px !important;
+}
+.highlight {
+  color: $text-highlight;
+}
+.hover:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.center {
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+}
+.text-center {
+  text-align: center;
+}
+.input {
+  
+    
+        width: 100%;
+        padding: 6px 12px;
+        border-radius: 4px;
+        outline: none;
+        height: 45px;
+        border: 1px solid $black;
+
+}
+button{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    font-size: 16px;
+    position: relative;
+}
+.btn-lg {
+    font-weight: 600;
+    padding: 8px 16px;
+    height: 44px;
+    width: 100%;
+    color: #fff;
+    background-color: $primary;
+}
+.customBtn {
+    display: inline-block;
+    color: #444;
+    border-radius: 5px;
+    border: thin solid #888;
+    box-shadow: 1px 1px 1px grey;
+    white-space: nowrap;
+    background-color: #fff !important;
 }

@@ -1,0 +1,61 @@
+.login__container { 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+.login__content{
+    --width: 640px;
+    background: #fff;
+    border-radius: 8px;
+    max-width: calc(100vw - 32px);
+    min-height: 600px;
+    padding: 48px 16px;
+    position: relative;
+    width: var(--width);
+   
+}
+@media (min-width: 0px) and (max-width: 739px){
+.Login_content{
+    min-height: 577px;
+}
+}
+.login__form{
+    max-width: 100%;
+    width: 380px;
+    margin: 0 auto;
+}
+.login__header {
+    overflow: hidden;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.login__wrapper {
+    background-image: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)), url(../../assets/images/login/login.webp);
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-repeat: no-repeat;
+    
+}
+.login__wrapper::before,::after{
+    background-size: cover;
+    content: "";
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    left: -5px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: -1;
+}
