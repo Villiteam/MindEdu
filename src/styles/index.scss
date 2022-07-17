@@ -41,3 +41,51 @@ a {
 .col-6 {
     width: 50%;
 }
+
+.mt-36 {
+    margin-top: 36px !important;
+}
+
+.mt-24 {
+    margin-top: 24px !important;
+}
+
+.mt-12 {
+    margin-top: 12px !important;
+}
+
+.highlight {
+    color: #6038cf;
+}
+
+.hover:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+button {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    font-size: 16px;
+    position: relative;
+}

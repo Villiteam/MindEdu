@@ -39,7 +39,9 @@ const Contest = () => {
         if (!user) {
             alert('Vui lòng đăng nhập!')
             navigate('/login')
+            return
         }
+        navigate('/aim')
     }
 
     // console.log(exams)
